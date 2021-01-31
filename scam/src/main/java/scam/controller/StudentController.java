@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @author y'l'l
- * test
+ * tests
  */
 @Controller
 public class StudentController {
