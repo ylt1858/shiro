@@ -6,11 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import scam.dao.StudentMapper;
 import scam.pojo.student;
-
 import javax.websocket.server.PathParam;
 import java.sql.SQLException;
 import java.util.List;
-
 
 /**
  * @author y'l'l

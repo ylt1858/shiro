@@ -15,7 +15,6 @@ import java.util.List;
  * 或者在启动类中加那个注释掉的东西不加mapper的话
  */
 
-//@Mapper
 @Repository
 public interface TeacherMapper {
     List<teacher> queryTeacherList();

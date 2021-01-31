@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import scam.dao.TeacherMapper;
-import scam.pojo.student;
 import scam.pojo.teacher;
 
 import javax.websocket.server.PathParam;
