@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scam.dao.StudentMapper">
+<!--    <mapper namespace="com.example.demo.DAO.UserMapper">-->
+
+<!--    <resultMap id="BaseResultMap" type="com.example.demo.pojo.User">-->
+<!--        <result column="id"       jdbcType="INTEGER" property="id" />-->
+<!--        <result column="name"     jdbcType="VARCHAR" property="name" />-->
+<!--        <result column="password" jdbcType="VARCHAR" property="password" />-->
+<!--    </resultMap>-->
+
+    <select id="queryStudentBySno" resultType="scam.pojo.student">
+        select * from user where sno = #{sno}
+    </select>
+    <select id="queryStudentList" resultType="scam.pojo.student">
+        select * from student
+    </select>
+    <delete id="deleteStudent" parameterType="scam.pojo.student">
+        delete from student where sno=#{sno}
+    </delete>
+
+    <insert id="addStudent" parameterType="scam.pojo.student">
+       insert into student (sno,s_name,grade,s_class,ID_card,Bank_card,team) values (#{sno},#{s_name},#{grade},#{s_class},#{ID_card},#{Bank_card},#{team})
+    </insert>
+
+    <update id="updateStudent" parameterType="scam.pojo.student">
+        update student set s_name=#{s_name},grade=#{grade},s_class=#{s_class},ID_card=#{ID_card},Bank_card=#{Bank_card},team=#{team}
+        where sno=#{sno}
+    </update>
+
+</mapper>

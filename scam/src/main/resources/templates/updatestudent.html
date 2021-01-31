@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1 >修改Student</h1></center>
+<center>
+    <form action="/updateStudent" method="post">
+    <br>
+    <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="sno" class="tl-price-input" placeholder="学号" th:value="${student.getSno()}" readonly><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="s_name" class="tl-price-input" placeholder="姓名" th:value="${student.getS_name()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="grade" class="tl-price-input" placeholder="年级" th:value="${student.getGrade()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="s_class" class="tl-price-input" placeholder="班级" th:value="${student.getS_class()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="ID_card" class="tl-price-input" placeholder="身份证号" th:value="${student.getID_card()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="Bank_card" class="tl-price-input" placeholder="银行卡号" th:value="${student.getBank_card()}"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="team" class="tl-price-input" placeholder="队伍" th:value="${student.getTeam()}"><br>
+    <input oninput="validateFeeling(this)" type="submit" name="登录" style="color:blue" class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>

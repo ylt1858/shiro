@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1 >添加Student</h1></center>
+<center>
+    <form action="/addStudent" method="post">
+    <br>
+    <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="sno" class="tl-price-input" placeholder="学号"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="s_name" class="tl-price-input" placeholder="姓名"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="grade" class="tl-price-input" placeholder="年级"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="s_class" class="tl-price-input" placeholder="班级"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="ID_card" class="tl-price-input" placeholder="身份证号"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="Bank_card" class="tl-price-input" placeholder="银行卡号"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="team" class="tl-price-input" placeholder="队伍"><br>
+    <input oninput="validateFeeling(this)" type="submit" name="登录" style="color:blue" class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>

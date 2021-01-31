@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scam.dao.TeacherMapper">
+<!--    <mapper namespace="com.example.demo.DAO.UserMapper">-->
+
+<!--    <resultMap id="BaseResultMap" type="com.example.demo.pojo.User">-->
+<!--        <result column="id"       jdbcType="INTEGER" property="id" />-->
+<!--        <result column="name"     jdbcType="VARCHAR" property="name" />-->
+<!--        <result column="password" jdbcType="VARCHAR" property="password" />-->
+<!--    </resultMap>-->
+
+    <select id="queryTeacherByTno" resultType="scam.pojo.teacher">
+        select * from user where id = #{id}
+    </select>
+    <select id="queryTeacherList" resultType="scam.pojo.teacher">
+        select * from teacher
+    </select>
+    <delete id="deleteTeacher" parameterType="scam.pojo.teacher">
+        delete from teacher where tno=#{tno}
+    </delete>
+
+    <insert id="addTeacher" parameterType="scam.pojo.teacher">
+        insert into teacher (tno,t_name,phone,e_mail) values (#{tno},#{t_name},#{phone},#{e_mail})
+    </insert>
+
+    <update id="updateTeacher" parameterType="scam.pojo.teacher">
+        update teacher set t_name=#{t_name},phone=#{phone},e_mail=#{e_mail} where tno=#{tno}
+    </update>
+
+</mapper>

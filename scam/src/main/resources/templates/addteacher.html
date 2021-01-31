@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+        function validateFeeling(input) {
+            if (input.value == " ") {
+                input.setCustomValidity('此项为必填');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<center><h1>添加Teacher</h1></center>
+<center>
+    <form action="/addTeacher" method="post">
+    <br>
+    <p style="color:red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="tno" class="tl-price-input" placeholder="工号"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="t_name" class="tl-price-input" placeholder="姓名"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="phone" class="tl-price-input" placeholder="电话"><br>
+    <input oninput="validateFeeling(this)" required="required" type="text" name="e_mail" class="tl-price-input" placeholder="邮箱"><br>
+    <input oninput="validateFeeling(this)" type="submit" name="提交"  class="ant-btn-primary">
+    </form>
+</center>
+<!--<center>-->
+<!--<a th:href="@{/addStudent}" style=""><button class="ant-btn ant-btn-red">添加</button></a>-->
+<!--</center>-->
+</body>
+</html>
