@@ -60,8 +60,7 @@ public class TeacherController {
         @PathParam("tno") String tno,
         @PathParam("t_name") String t_name,
         @PathParam("phone") String phone,
-        @PathParam("e_mail") String e_mail,
-        Model model
+        @PathParam("e_mail") String e_mail
     ){
         teacher teacher = new teacher(tno, t_name, phone, e_mail);
         teacherMapper.addTeacher(teacher);

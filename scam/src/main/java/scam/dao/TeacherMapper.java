@@ -23,4 +23,5 @@ public interface TeacherMapper {
     int addTeacher(teacher teacher );
     int updateTeacher(teacher teacher);
     int deleteTeacher(String tno);
+
 }

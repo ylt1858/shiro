@@ -22,4 +22,5 @@ public interface StudentMapper {
     int addStudent(student student);
     int updateStudent(student student);
     int deleteStudent(String sno);
+
 }
