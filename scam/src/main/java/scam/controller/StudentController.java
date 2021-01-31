@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import scam.dao.StudentMapper;
 import scam.pojo.student;
 
-import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 @Controller
@@ -73,8 +71,6 @@ public class StudentController {
     ) throws SQLException {
         student student = new student(sno, s_name, grade, s_class, ID_card, Bank_card, team);
         studentMapper.addStudent(student);
-        //model.addAttribute("msg", "学号可能重复");
         return "redirect:/StudentTable";
-        //return "addstudnet.html";
     }
 }

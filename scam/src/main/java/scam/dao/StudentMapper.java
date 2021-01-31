@@ -22,15 +22,4 @@ public interface StudentMapper {
     int addStudent(student student);
     int updateStudent(student student);
     int deleteStudent(String sno);
-//    List<User> queryUserList();
-//
-//    User queryUserById(int id);
-//
-//    int addUser(User user);
-//
-//    int updateUser(User user);
-//
-//    int deleteUser(int id);
-
-
 }
