@@ -11,6 +11,9 @@ import scam.pojo.teacher;
 import javax.websocket.server.PathParam;
 import java.util.List;
 
+/**
+ * @author y'l'l
+ */
 @Controller
 public class TeacherController {
     @Autowired
