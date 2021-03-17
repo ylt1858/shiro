@@ -1,7 +1,7 @@
 package com.study.controller;
 
+import com.study.entity.Account;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.Account;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -31,8 +31,9 @@ public class AccountController {
         UsernamePasswordToken token = new UsernamePasswordToken(username ,password);
         try {
             subject.login(token);
-            Account account = (Account) subject.getPrincipal();
-            subject.getSession().setAttribute("account",account);
+            // 拿到用户传来的值
+             Account account = (Account) subject.getPrincipal();
+             subject.getSession().setAttribute("account",account);
             return "index";
         } catch (UnknownAccountException e) {
             e.printStackTrace();
@@ -49,5 +50,12 @@ public class AccountController {
     @ResponseBody
     public String unAuth() {
         return "未授权！无法访问！";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return "login";
     }
 }

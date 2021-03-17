@@ -8,6 +8,8 @@ spring:
     password: "020110"
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  freemarker:
+    suffix: .html
 #  mvc:
 #    format:
 #      date-time: yyyy-MM-dd HH:mm:ss

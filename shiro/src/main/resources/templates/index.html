@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>index</h1><a></a>
-<!--    <span th:text="${}"></span>-->
+    <div th:if="${session.account != null}">
+        <span th:text="${session.account.username} + '欢迎回来！'"></span>
+        <a href="/logout">退出</a>
+    </div>
     <a href="/main">main</a><br>
     <a href="/manager">manager</a><br>
     <a href="/administrator">administrator</a>

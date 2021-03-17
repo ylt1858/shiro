@@ -36,9 +36,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);
         // 权限设置
-        Map<String,String> map = new HashMap<>();
+        Map<String,String> map = new HashMap<>(4);
         map.put("/main","authc");
-        map.put("/manager","perms[manage]");
+        map.put("/manager","perms[manager]");
         map.put("/administrator","roles[administrator]");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         // 设置跳转登录页面
