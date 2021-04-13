@@ -10,7 +10,7 @@
 <!--    </resultMap>-->
 
     <select id="queryTeacherByTno" resultType="scam.pojo.teacher">
-        select * from user where id = #{id}
+        select * from teacher where tno = #{tno}
     </select>
     <select id="queryTeacherList" resultType="scam.pojo.teacher">
         select * from teacher

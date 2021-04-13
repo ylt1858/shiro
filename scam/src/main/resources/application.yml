@@ -12,7 +12,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
 
-#������һ��������
+# 启用某个环境
 #spring:
 #  profiles:
 #    active: test

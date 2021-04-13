@@ -18,6 +18,11 @@ public class StudentController {
     @Autowired
     private StudentMapper studentMapper;
 
+    @RequestMapping("/toIndex")
+    public String toIndex(){
+        return "index";
+    }
+
     @RequestMapping("/updateStudent")
     public String updateStudent(
             @PathParam("sno") String sno,
@@ -47,7 +52,7 @@ public class StudentController {
         return "updatestudent";
     }
 
-    @RequestMapping("/StudentTable")
+    @RequestMapping({"/StudentTable"})
     public String StudentTable(Model model){
         List<student> students = studentMapper.queryStudentList();
         model.addAttribute("students",students);
